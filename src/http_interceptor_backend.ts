@@ -6,7 +6,6 @@ import { HttpInterceptor } from './http_interceptor';
 
 export class HttpInterceptorBackend implements ConnectionBackend {
   constructor( private httpInterceptors: HttpInterceptor[], private xhrBackend: XHRBackend) {
-    console.log(this.httpInterceptors);
   }
 
   createConnection(request: any): XHRConnection {
