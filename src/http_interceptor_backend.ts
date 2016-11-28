@@ -1,11 +1,12 @@
 /**
  * Created by yulonh on 2016/11/22.
  */
-import {ConnectionBackend, XHRConnection, XHRBackend} from '@angular/http'
-import {HttpInterceptor} from './http_interceptor';
+import { ConnectionBackend, XHRConnection, XHRBackend } from '@angular/http'
+import { HttpInterceptor } from './http_interceptor';
 
-export class InterceptorXHRBackend implements ConnectionBackend {
-  constructor(private httpInterceptors: HttpInterceptor[], private xhrBackend: XHRBackend) {
+export class HttpInterceptorBackend implements ConnectionBackend {
+  constructor( private httpInterceptors: HttpInterceptor[], private xhrBackend: XHRBackend) {
+    console.log(this.httpInterceptors);
   }
 
   createConnection(request: any): XHRConnection {
