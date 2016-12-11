@@ -13,7 +13,7 @@ export class HttpInterceptorBackend implements ConnectionBackend {
         for (interceptor of this.httpInterceptors) {
             req = interceptor.before ? interceptor.before(req) : req;
             if (!req) {
-                return;
+                return null;
             }
         }
 
