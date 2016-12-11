@@ -1,6 +1,6 @@
 {
   "name": "angular2-http-interceptor",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Http interceptor for angular2.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
