@@ -12,9 +12,6 @@ export class HttpInterceptorBackend implements ConnectionBackend {
         let req: any = request, interceptor: HttpInterceptor;
         for (interceptor of this.httpInterceptors) {
             req = interceptor.before ? interceptor.before(req) : req;
-            if (!req) {
-                return null;
-            }
         }
 
         let result: XHRConnection = this.xhrBackend.createConnection(req);
