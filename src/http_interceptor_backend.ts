@@ -1,25 +1,36 @@
 /**
  * Created by yulonh on 2016/11/22.
  */
-import {ConnectionBackend, XHRConnection, XHRBackend} from '@angular/http'
-import {HttpInterceptor} from './http_interceptor';
+import {ConnectionBackend, XHRBackend, Request} from "@angular/http";
+import {HttpInterceptor} from "./http_interceptor";
+import {Observable} from "rxjs";
+import {HttpInterceptorConnection} from "./http_interceptor_connection";
 
 export class HttpInterceptorBackend implements ConnectionBackend {
-    constructor(private httpInterceptors: HttpInterceptor[], private xhrBackend: XHRBackend) {
-    }
+  constructor(private httpInterceptors: HttpInterceptor[], private xhrBackend: XHRBackend) {
+  }
 
-    createConnection(request: any): XHRConnection {
-        let req: any = request, interceptor: HttpInterceptor;
-        for (interceptor of this.httpInterceptors) {
-            req = interceptor.before ? interceptor.before(req) : req;
+  createConnection(request: any): HttpInterceptorConnection {
+    let interceptor: HttpInterceptor;
+    let reqObs: Observable<Request> = Observable.of(request);
+    for (interceptor of this.httpInterceptors) {
+      if (!interceptor.before)
+        continue;
+      reqObs = reqObs.mergeMap(req => {
+        let nextReq = interceptor.before(req);
+        if (nextReq instanceof Observable) {
+          return nextReq;
+        } else {
+          return Observable.of(nextReq);
         }
-
-        let result: XHRConnection = this.xhrBackend.createConnection(req);
-
-        for (interceptor of this.httpInterceptors) {
-            result.response = interceptor.after ? interceptor.after(result.response) : result.response;
-        }
-
-        return result;
+      });
     }
+    let connection = new HttpInterceptorConnection(reqObs, this.xhrBackend);
+    this.httpInterceptors.forEach(interceptor => {
+      if (interceptor.after) {
+        connection.response = interceptor.after(connection.response);
+      }
+    });
+    return connection;
+  }
 }
