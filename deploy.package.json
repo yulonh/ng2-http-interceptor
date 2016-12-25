@@ -1,0 +1,34 @@
+{
+  "name": "angular2-http-interceptor",
+  "version": "1.2.5",
+  "description": "Http interceptor for angular2.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf lib && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yulonh/ng2-http-interceptor.git"
+  },
+  "keywords": [
+    "angular2",
+    "http",
+    "interceptor"
+  ],
+  "author": "421998192@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yulonh/ng2-http-interceptor/issues"
+  },
+  "homepage": "https://github.com/yulonh/ng2-http-interceptor#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "typescript": "2.0.10",
+    "@angular/core": "2.2.1",
+    "@angular/http": "2.2.1",
+    "rxjs": "5.0.0-rc.4"
+  }
+}
