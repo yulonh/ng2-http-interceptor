@@ -11,18 +11,13 @@ export class HttpInterceptorBackend implements ConnectionBackend {
   }
 
   createConnection(request: any): HttpInterceptorConnection {
-    let interceptor: HttpInterceptor;
     let reqObs: Observable<Request> = Observable.of(request);
-    for (interceptor of this.httpInterceptors) {
+    for (let interceptor of this.httpInterceptors) {
       if (!interceptor.before)
         continue;
       reqObs = reqObs.mergeMap(req => {
         let nextReq = interceptor.before(req);
-        if (nextReq instanceof Observable) {
-          return nextReq;
-        } else {
-          return Observable.of(nextReq);
-        }
+        return nextReq instanceof Observable ? nextReq : Observable.of(nextReq);
       });
     }
     let connection = new HttpInterceptorConnection(reqObs, this.xhrBackend);
