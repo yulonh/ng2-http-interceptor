@@ -15,6 +15,16 @@ import {
 } from "@angular/http";
 import {HttpInterceptor} from "./http_interceptor";
 import {HttpInterceptorBackend} from "./http_interceptor_backend";
+
+export function httpFactory(httpInterceptorBackend: HttpInterceptorBackend, requestOptions: RequestOptions): Http {
+  return new Http(httpInterceptorBackend, requestOptions);
+}
+
+
+export function createDefaultCookieXSRFStrategy() {
+  return new CookieXSRFStrategy();
+}
+
 /**
  * The module that includes http interceptor providers
  */
@@ -39,13 +49,5 @@ export class HttpInterceptorModule {
         {provide: XSRFStrategy, useFactory: createDefaultCookieXSRFStrategy},
       ])
     };
-
-    function httpFactory(httpInterceptorBackend: HttpInterceptorBackend, requestOptions: RequestOptions): Http {
-      return new Http(httpInterceptorBackend, requestOptions);
-    }
-
-    function createDefaultCookieXSRFStrategy() {
-      return new CookieXSRFStrategy();
-    }
   }
 }

@@ -1,9 +1,9 @@
 {
   "name": "angular2-http-interceptor",
-  "version": "1.2.6",
+  "version": "1.2.8",
   "description": "Http interceptor for angular2.",
   "scripts": {
-    "build": "rm -rf lib/* && cp deploy.package.json lib/package.json && tsc ",
+    "build": "rm -rf lib/* && cp -f deploy.package.json lib/package.json && tsc ",
     "start": "ng serve",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
