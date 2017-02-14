@@ -1,6 +1,6 @@
 {
     "name": "angular2-http-interceptor",
-    "version": "1.8.0",
+    "version": "2.0.0",
     "description": "Build a library compatible with Angular, AoT compilation and Tree shaking",
     "main": "bundles/angular-library-starter.umd.js",
     "module": "index.js",
