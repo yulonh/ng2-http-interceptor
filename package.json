@@ -1,7 +1,7 @@
 {
     "name": "angular2-http-interceptor",
     "version": "2.0.0",
-    "description": "Build a library compatible with Angular, AoT compilation and Tree shaking",
+    "description": "Http interceptor for angular2",
     "main": "bundles/angular-library-starter.umd.js",
     "module": "index.js",
     "scripts": {
@@ -14,12 +14,12 @@
     "author": "",
     "repository": {
         "type": "git",
-        "url": "https://github.com/robisim74/angular-library-starter.git"
+        "url": "https://github.com/yulonh/ng2-http-interceptor.git"
     },
     "bugs": {
-        "url": "https://github.com/robisim74/angular-library-starter/issues"
+        "url": "https://github.com/yulonh/ng2-http-interceptor/issues"
     },
-    "homepage": "https://github.com/robisim74/angular-library-starter",
+    "homepage": "https://github.com/yulonh/ng2-http-interceptor",
     "keywords": [
         "angular",
         "javascript",
