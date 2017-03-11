@@ -1,6 +1,6 @@
 {
     "name": "angular2-http-interceptor",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "Http interceptor for angular2",
     "main": "bundles/angular-library-starter.umd.js",
     "module": "index.js",

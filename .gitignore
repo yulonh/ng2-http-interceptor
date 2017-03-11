@@ -7,6 +7,7 @@ demo/node_modules
 
 # compiled output
 /dist
+/aot
 /tmp
 
 # dependencies
