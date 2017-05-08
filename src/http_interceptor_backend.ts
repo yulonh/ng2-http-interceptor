@@ -5,10 +5,10 @@ import {
   ConnectionBackend,
   XHRBackend,
   Request
-} from "@angular/http";
-import {HttpInterceptor} from "./http_interceptor";
-import {Observable} from "rxjs";
-import {HttpInterceptorConnection} from "./http_interceptor_connection";
+} from '@angular/http';
+import {HttpInterceptor} from './http_interceptor';
+import {Observable} from 'rxjs';
+import {HttpInterceptorConnection} from './http_interceptor_connection';
 
 export class HttpInterceptorBackend implements ConnectionBackend {
   constructor(private httpInterceptors: HttpInterceptor[], private xhrBackend: XHRBackend) {

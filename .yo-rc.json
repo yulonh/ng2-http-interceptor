@@ -1,0 +1,7 @@
+{
+  "generator-angular2-library": {
+    "promptValues": {
+      "gitRepositoryUrl": "https://github.com/yulonh/ng2-http-interceptor.git"
+    }
+  }
+}

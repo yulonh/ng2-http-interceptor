@@ -1,0 +1,26 @@
+{
+  "name": "angular2-http-interceptor",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yulonh/ng2-http-interceptor.git"
+  },
+  "author": {
+    "name": "yulonh",
+    "email": "421998192@qq.com"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yulonh/ng2-http-interceptor.git/issues"
+  },
+  "module": "angular2-http-interceptor.js",
+  "typings": "angular2-http-interceptor.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+}

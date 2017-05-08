@@ -4,12 +4,12 @@ import {
   Request,
   XHRBackend,
   Response
-} from "@angular/http";
+} from '@angular/http';
 import {
   Observable,
   Observer,
   Subscription
-} from "rxjs";
+} from 'rxjs';
 export class HttpInterceptorConnection implements Connection {
   public readyState: ReadyState;
   public request: Request;
