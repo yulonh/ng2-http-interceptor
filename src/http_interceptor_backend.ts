@@ -7,7 +7,7 @@ import {
   Request
 } from "@angular/http";
 import {HttpInterceptor} from "./http_interceptor";
-import {Observable} from "rxjs";
+import {Observable} from "rxjs/Observable";
 import {HttpInterceptorConnection} from "./http_interceptor_connection";
 
 export class HttpInterceptorBackend implements ConnectionBackend {

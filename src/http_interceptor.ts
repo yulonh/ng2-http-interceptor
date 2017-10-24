@@ -3,7 +3,7 @@ import {
   Request,
   Response
 } from "@angular/http";
-import {Observable} from "rxjs";
+import {Observable} from "rxjs/Observable";
 /**
  * Created by yulonh on 2016/11/22.
  */
